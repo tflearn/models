@@ -45,10 +45,10 @@ def vgg16(placeholderX=None):
     x = tflearn.conv_2d(x, 512, 3, activation='relu', name='conv5_3')
     x = tflearn.max_pool_2d(x, 2, strides=2, name='pool5')
 
-    x = tflearn.conv_2d(x, 4096, 7, activation='relu', name='fc6')
+    x = tflearn.fully_connected(x, 4096, activation='relu', name='fc6')
     x = tflearn.dropout(x, 0.5)
 
-    x = tflearn.conv_2d(x, 4096, 1, activation='relu', name='fc7')
+    x = tflearn.fully_connected(x, 4096, activation='relu', name='fc7')
     x = tflearn.dropout(x, 0.5)
 
     return x
