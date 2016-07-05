@@ -51,6 +51,6 @@ def vgg16(placeholderX=None):
     x = tflearn.fully_connected(x, 4096, activation='relu', scope='fc7')
     x = tflearn.dropout(x, 0.5)
 
-    x = tflearn.fully_connected(x, 4096, activation='softmax', scope='fc8')
+    x = tflearn.fully_connected(x, 1000, activation='softmax', scope='fc8')
 
     return x
